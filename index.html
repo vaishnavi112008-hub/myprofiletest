@@ -1,1 +1,791 @@
-<h1>Hello World from github pages</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaishnavi Gupta | IT Student</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #faf9ff;
+    color: #24212d;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(250, 249, 255, 0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid #ebe8f2;
+}
+
+.nav {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #6846d9;
+}
+
+.navlinks {
+    display: flex;
+    gap: 26px;
+    font-size: 0.92rem;
+    color: #686475;
+}
+
+.navlinks a:hover {
+    color: #6846d9;
+}
+
+/* HERO */
+.hero {
+    min-height: calc(100vh - 68px);
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 60px;
+    padding: 70px 0;
+}
+
+.badge {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 30px;
+    background: #eeeaff;
+    color: #6846d9;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(3.2rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -4px;
+}
+
+h1 span {
+    color: #6846d9;
+}
+
+.hero-text {
+    font-size: 1.08rem;
+    color: #716d79;
+    max-width: 620px;
+    margin-top: 25px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 19px;
+    border-radius: 12px;
+    border: 1px solid #ded9ea;
+    background: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn.primary {
+    background: #24212d;
+    color: white;
+    border-color: #24212d;
+}
+
+/* PROFILE CARD */
+.profile {
+    background: linear-gradient(145deg, #ffffff, #eeeaff);
+    border: 1px solid #e3deef;
+    border-radius: 30px;
+    padding: 32px;
+    box-shadow: 0 20px 50px rgba(70, 50, 120, 0.1);
+}
+
+.avatar {
+    width: 115px;
+    height: 115px;
+    border-radius: 32px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 2.6rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #6846d9, #aa8cff);
+    margin-bottom: 22px;
+}
+
+.profile h2 {
+    font-size: 1.65rem;
+}
+
+.role {
+    color: #77717f;
+    margin: 3px 0 22px;
+}
+
+.fact {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 11px 0;
+    border-bottom: 1px solid #e4dfeb;
+    font-size: 0.88rem;
+}
+
+.fact span {
+    color: #77717f;
+    text-align: right;
+}
+
+/* SECTIONS */
+section {
+    padding: 90px 0;
+}
+
+.label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #6846d9;
+}
+
+.section-title {
+    font-size: 2.4rem;
+    letter-spacing: -1px;
+    margin: 5px 0 10px;
+}
+
+.section-sub {
+    color: #77717f;
+    max-width: 650px;
+}
+
+/* CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 32px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e7e3ed;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 7px 24px rgba(40, 30, 70, 0.04);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #77717f;
+    font-size: 0.92rem;
+}
+
+/* TAGS */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 25px;
+}
+
+.tag {
+    padding: 8px 12px;
+    border-radius: 30px;
+    background: #f0edff;
+    color: #5d3bc9;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* PROJECTS */
+.project {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-no {
+    color: #6846d9;
+    font-weight: 800;
+    font-size: 0.8rem;
+    margin-bottom: 18px;
+}
+
+.project-bottom {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+/* TIMELINE */
+.timeline {
+    display: grid;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 25px;
+    background: white;
+    border: 1px solid #e7e3ed;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.year {
+    font-weight: 800;
+    color: #6846d9;
+}
+
+.timeline-item p {
+    color: #77717f;
+    font-size: 0.9rem;
+}
+
+/* CONTACT */
+.contact {
+    background: #24212d;
+    color: white;
+    border-radius: 28px;
+    padding: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.contact p {
+    color: #c8c4ce;
+    margin-top: 5px;
+}
+
+.contact .btn {
+    background: white;
+    color: #24212d;
+    border-color: white;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    color: #77717f;
+    padding: 35px;
+    font-size: 0.82rem;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+    .navlinks {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .contact {
+        display: block;
+        padding: 35px;
+    }
+
+    .contact .btn {
+        margin-top: 20px;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="container nav">
+
+        <a class="logo" href="#">VG.</a>
+
+        <div class="navlinks">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#journey">Journey</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<main>
+
+<!-- HERO SECTION -->
+<section class="container hero">
+
+    <div>
+
+        <div class="badge">
+            Second Year · Information Technology Engineering
+        </div>
+
+        <h1>
+            Hi, I'm <span>Vaishnavi.</span>
+        </h1>
+
+        <p class="hero-text">
+            An IT engineering student at TCET who enjoys technology,
+            creativity, presentations and building practical projects
+            while continuously learning.
+        </p>
+
+        <div class="buttons">
+
+            <a class="btn primary" href="#projects">
+                View My Work
+            </a>
+
+            <a class="btn" href="#contact">
+                Let's Connect
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROFILE CARD -->
+    <div class="profile">
+
+        <div class="avatar">
+            VG
+        </div>
+
+        <h2>Vaishnavi Gupta</h2>
+
+        <p class="role">
+            Information Technology Engineering · TCET
+        </p>
+
+        <div class="fact">
+            <b>Year</b>
+            <span>Second Year</span>
+        </div>
+
+        <div class="fact">
+            <b>CGPA</b>
+            <span>9.55</span>
+        </div>
+
+        <div class="fact">
+            <b>Focus</b>
+            <span>Technology & Creativity</span>
+        </div>
+
+        <div class="fact">
+            <b>Interests</b>
+            <span>Design · Dance · Cricket</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="container">
+
+    <div class="label">
+        About Me
+    </div>
+
+    <h2 class="section-title">
+        Curious, creative & learning.
+    </h2>
+
+    <p class="section-sub">
+        I am building my technical foundation while exploring
+        the creative side of engineering through projects,
+        presentations, teamwork and design.
+    </p>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>🎓 Academics</h3>
+
+            <p>
+                Pursuing Information Technology Engineering
+                at TCET with a strong academic foundation.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>💡 Learning</h3>
+
+            <p>
+                Exploring Java, DSA, DBMS, web development
+                and AI step by step.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🎨 Creative Side</h3>
+
+            <p>
+                Interested in visual design, presentations,
+                writing, dance and digital content.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+<div class="container">
+
+    <div class="label">
+        Skills & Interests
+    </div>
+
+    <h2 class="section-title">
+        What I'm exploring
+    </h2>
+
+
+    <div class="card">
+
+        <div class="tags">
+
+            <span class="tag">C++</span>
+            <span class="tag">Java — Learning</span>
+            <span class="tag">HTML & CSS</span>
+            <span class="tag">DBMS</span>
+            <span class="tag">DSA</span>
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">Excel</span>
+            <span class="tag">UI / Visual Design</span>
+            <span class="tag">Presentation</span>
+            <span class="tag">Team Coordination</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+<div class="container">
+
+    <div class="label">
+        Projects
+    </div>
+
+    <h2 class="section-title">
+        Things I'm building
+    </h2>
+
+    <p class="section-sub">
+        Projects focused on practical learning
+        and simple, usable solutions.
+    </p>
+
+
+    <div class="grid">
+
+
+        <div class="card project">
+
+            <div class="project-no">
+                01 · INDUSTRY PRACTICE
+            </div>
+
+            <h3>
+                Online Course Tracker
+            </h3>
+
+            <p>
+                A beginner-friendly Java web project
+                with login, course browsing, enrollment
+                and course-status tracking.
+            </p>
+
+            <div class="project-bottom">
+                <span class="tag">
+                    Java · Web
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="card project">
+
+            <div class="project-no">
+                02 · DATABASE
+            </div>
+
+            <h3>
+                University DBMS Design
+            </h3>
+
+            <p>
+                Exploring centralized university data
+                management using DBMS concepts and
+                the Three-Schema Architecture.
+            </p>
+
+            <div class="project-bottom">
+                <span class="tag">
+                    DBMS · SQL
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="card project">
+
+            <div class="project-no">
+                03 · DSA
+            </div>
+
+            <h3>
+                Data Structures Practice
+            </h3>
+
+            <p>
+                Practicing trees, searching, sorting
+                and linked structures through simple
+                C implementations.
+            </p>
+
+            <div class="project-bottom">
+                <span class="tag">
+                    C · DSA
+                </span>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- JOURNEY -->
+<section id="journey">
+
+<div class="container">
+
+    <div class="label">
+        My Journey
+    </div>
+
+    <h2 class="section-title">
+        A few milestones
+    </h2>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="year">
+                2025
+            </div>
+
+            <div>
+
+                <h3>
+                    Started Engineering
+                </h3>
+
+                <p>
+                    Joined TCET for Information
+                    Technology Engineering.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="year">
+                2026
+            </div>
+
+            <div>
+
+                <h3>
+                    Second Year
+                </h3>
+
+                <p>
+                    Working on Java, DSA, DBMS,
+                    digital circuits and practical
+                    engineering projects.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="year">
+                2026
+            </div>
+
+            <div>
+
+                <h3>
+                    Beyond Academics
+                </h3>
+
+                <p>
+                    Exploring clubs, competitions,
+                    presentations, teamwork and
+                    creative activities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="container">
+
+<div class="contact">
+
+    <div>
+
+        <h2>
+            Let's build something interesting.
+        </h2>
+
+        <p>
+            Open to learning, collaborating
+            and trying something new.
+        </p>
+
+    </div>
+
+
+    <!-- Replace this email with yours -->
+    <a class="btn" href="mailto:your-email@example.com">
+        Contact Me
+    </a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    © 2026 Vaishnavi Gupta · Single-file HTML profile
+
+</footer>
+
+</body>
+</html>
